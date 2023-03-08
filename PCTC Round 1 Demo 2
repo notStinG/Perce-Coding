@@ -1,0 +1,9 @@
+fnum = int(input())            ## Allowing user to input the first number.
+snum = int(input())            ## Allowing user to input the second number.
+
+if fnum > snum:
+    result = fnum - snum       ## If First number is bigger.
+else:
+    result = snum - fnum       ## If Second number is bigger.
+
+print(result)
