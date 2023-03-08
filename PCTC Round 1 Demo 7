@@ -1,0 +1,6 @@
+letter1 = input()
+letter2 = input()
+if ord(letter1) < ord(letter2):
+    print(letter1+letter2)
+else:
+    print(letter2+letter1)
