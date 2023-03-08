@@ -1,0 +1,6 @@
+top = "\./"
+stem = ".|."
+days = int(input())
+print(top)
+for i in range(days):
+    print(stem)
