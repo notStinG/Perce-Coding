@@ -1,0 +1,7 @@
+dance = ["<", "+", "&", ">", "<", "+", "&", ">", "<", "+", "&"]
+result = ""
+order = dance.index(input())
+while len(result) != 8:
+    result += dance[order]
+    order += 1
+print(result)
