@@ -1,0 +1,8 @@
+fnum = int(input())
+op = input()
+snum = int(input())
+
+if op == "+":
+    print(fnum+snum)
+if op == "*":
+    print(fnum*snum)
