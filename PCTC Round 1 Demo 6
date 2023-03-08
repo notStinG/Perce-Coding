@@ -1,0 +1,14 @@
+for i in range(5):
+    name = input()
+    if name == "Ellie":
+        placem = i+1
+        if placem == 1:
+            print("1st")
+            break
+        if placem == 2:
+            print("2nd")
+        if placem == 3:
+            print("3rd")
+        if str(placem) in "45":
+            print("{}th".format(placem))
+        break
