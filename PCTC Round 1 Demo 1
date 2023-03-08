@@ -1,0 +1,3 @@
+greeting = input() ## User inputs Greeting
+name = input()     ## User inputs name
+print(greeting, name)
