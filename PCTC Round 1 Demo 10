@@ -1,0 +1,5 @@
+good = ["I", "I", "M", "C", "C", "C", "W"]
+added = input()
+for i in range(6):
+    good.remove(added[i])
+print(good[0])
