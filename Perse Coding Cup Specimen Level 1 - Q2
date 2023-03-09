@@ -1,0 +1,9 @@
+word = input()
+num = int(input())
+
+if num > len(word):
+    print("FEWER")
+elif num < len(word):
+    print("MORE")
+else:
+    print("MATCH")
