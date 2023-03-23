@@ -1,0 +1,6 @@
+out = ""
+word = input()
+rep = int(input())
+for i in range(len(word)):
+    out += word[-i-1]
+print(out*rep)
