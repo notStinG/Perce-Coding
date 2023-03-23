@@ -1,0 +1,16 @@
+cap = 101
+base = 0
+guess = None
+counter = 0
+n = int(input())
+while not(n >= 1 or n <= 100):
+    n = input()
+while n != guess:
+    counter += 1
+    guess = (cap + base)//2
+    if guess == n:
+        print(counter)
+    if guess > n:
+        cap = guess
+    if guess < n:
+        base = guess
