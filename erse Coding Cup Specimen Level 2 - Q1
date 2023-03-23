@@ -1,0 +1,13 @@
+unlucky = 0
+total = 0
+n = input()
+nlist = n.split(" ")
+for i in range(len(nlist)):
+    if nlist[i] == "13":
+        unlucky = 1
+    else:
+        if unlucky == 0:
+            total += int(nlist[i])
+        else:
+            unlucky -= 1
+print(total)
