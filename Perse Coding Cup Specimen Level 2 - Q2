@@ -1,0 +1,10 @@
+highest = 0
+lowest = ord("z")
+alphabets = input()
+alplist = alphabets.split(" ")
+for i in range(len(alplist)):
+    if ord(alplist[i]) > highest:
+        highest = ord(alplist[i])
+    if ord(alplist[i]) < lowest:
+        lowest = ord(alplist[i])
+print(highest - lowest)
