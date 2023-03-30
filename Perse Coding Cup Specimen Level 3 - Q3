@@ -1,0 +1,9 @@
+num = input()
+counter = 0
+while True:
+    if num == num[::-1]:
+        print(counter)
+        break
+    else:
+        num = str(int(num) + int(num[::-1]))
+        counter += 1
