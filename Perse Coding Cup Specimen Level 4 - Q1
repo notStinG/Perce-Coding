@@ -1,0 +1,52 @@
+## Simple Pontoon Game
+def game(rounds,deck):
+    total = 0
+    for x in range(rounds):
+        cards = 2
+        total += deck[0]
+        total += deck[1]
+        deck.remove(deck[0])
+        deck.remove(deck[1])
+        while True:
+            grade = grading(total,deck)
+            if grade != None:
+                break
+    return(grade)
+
+## Grading
+def grading(total,deck):
+    if total == 21:
+        return "A"
+    if total > 21:
+        return "D"
+    if total < 21:
+        if total >= 17:
+            return "C{}".format(total)
+            if cards != 5:
+                cards += 1
+                twist(total, deck)
+                return None
+            else:
+                return "B"
+
+## Twist
+def twist(total, deck):
+    total += deck[0]
+    deck.remove(deck[0])
+
+
+
+## The deck of cards 
+deck = []
+fulldeck = input()
+for i in range(len(fulldeck)):
+    if fulldeck[i] == "A":
+        deck.append(11)
+    elif fulldeck[i] == "T" or fulldeck[i] == "J" or fulldeck[i] == "Q" or fulldeck[i] == "K":
+        deck.append(10)
+    else:
+        deck.append(int(fulldeck[i]))
+
+## Rounds to be played
+rounds = int(input())
+print(game(rounds,deck))
