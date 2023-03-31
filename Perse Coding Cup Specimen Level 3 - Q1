@@ -1,0 +1,19 @@
+word = input()
+
+def testPal(word):
+    if word == word[::-1]:
+        return True
+    else:
+        return False
+
+while not testPal(word):
+   found = False
+   for i in range(len(word)):
+      if testPal(word[0:i] + word[i+1:]):
+         found = True
+         word = word[0:i] + word[i+1:]
+         break
+   if not found:
+      word = word[1:]
+
+print(word)
