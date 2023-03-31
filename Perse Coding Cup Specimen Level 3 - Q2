@@ -1,0 +1,18 @@
+rounds = int(input())
+num = "1"
+
+for x in range(rounds):
+    nextnum = ""
+    now = num[0]
+    count = 1
+    for i in num[1:]:
+        if i == now:
+            count += 1
+        else:
+            nextnum += str(count) + now
+            now = i
+            count = 1
+    
+    nextnum += str(count) + now
+    num = nextnum
+print(num)
