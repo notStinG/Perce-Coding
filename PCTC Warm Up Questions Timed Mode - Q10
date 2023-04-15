@@ -1,0 +1,41 @@
+def setdeck():
+    deck = []
+    for i in range(9):
+        deck.append(str(i+1))
+    return deck
+
+def shuffle(odeck, ndeck, x, y):
+    while len(odeck) > 0:
+        if len(odeck) != 0:
+            for a in range(x):
+                if len(odeck) == 0:
+                    break
+                ndeck.append(odeck[0])
+                odeck.remove(odeck[0])
+        if len(odeck) != 0:
+            for b in range(y):
+                if len(odeck) == 0:
+                    break
+                odeck = odeck[::-1]
+                ndeck.append(odeck[0])
+                odeck.remove(odeck[0])
+                odeck = odeck[::-1]
+    return ndeck[::-1]
+
+def printing(deck):
+    result = ""
+    for w in range(len(deck)):
+        result += deck[w]
+    return result
+
+def main():
+    x = int(input())
+    y = int(input())
+    n = int(input())
+    odeck = setdeck()
+    for z in range(n):
+        ndeck = []
+        odeck = shuffle(odeck, ndeck, x, y)
+    print(printing(odeck))
+    return None
+main()
