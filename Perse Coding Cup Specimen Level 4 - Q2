@@ -1,0 +1,71 @@
+def setboard(grid, s, p):
+    for a in range(p):       ## Red
+        grid.append("r")
+    for b in range(s - p*2): ## Blanks
+        grid.append("_")
+    for c in range(p):       ## Blues
+        grid.append("b")
+    return grid
+
+def move(board, pos1, pos2):
+    board[pos1], board[pos2] = board[pos2], board[pos1] ## Swapping the positions of two position
+    return board
+
+def printing(board):           ## Printing as a string
+    final = ""
+    for z in range(len(board)):
+        final += board[z]
+    return final
+
+def play(board, m):
+    ## Red's Turn first
+    count = 0
+    countr = 0
+    while countr != m:            ## Finding player m
+        if board[count] == "r": 
+            countr += 1
+        if count == len(board):  ## Check for end of the board
+            break
+        count += 1
+    if board[count + 1] == "_": ## If there is an empty space to the right of the player m on Red Team
+        move(board, count, count + 1)
+    if board[count + 2] == "_": ## If there is an empty space to jump a player from Red Team to Blue Team
+        move(board, count, count + 2)
+
+    ## Blue's Turn next
+    board = board[::-1]
+    count = 0
+    countb = 0
+    while countb != m:            ## Finding player m
+        if board[count] == "b": 
+            countb += 1
+        if count == len(board):  ## Check for end of the board
+            break
+        count += 1
+    if board[count + 1] == "_": ## If there is an empty space to the right of the player m on Blue Team
+        move(board, count, count + 1)
+    if board[count + 2] == "_": ## If there is an empty space to jump a player from Blue Team to Red Team
+        move(board, count, count + 2)
+    board = board[::-1]
+    return board
+
+
+def main():
+    s = int(input()) ## Stepping stones
+    p = int(input()) ## Players on each team
+    c = int(input()) ## Counting number
+    n = int(input()) ## Rounds to be played
+    m = p - 1
+    grid = []
+    board = setboard(grid, s, p)
+    for d in range(n):
+        board = play(board, m)
+        m += c
+        if (m + 1) > p:
+            m -= p
+        if d == 0:
+            print(printing(board))
+    print(printing(board))
+    return None
+
+main()
