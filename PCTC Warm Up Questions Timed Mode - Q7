@@ -1,0 +1,27 @@
+price = float(input())
+perc = int(input())
+
+if price < 10:
+    newprice = price * ((100 - perc) / 100)
+    if newprice < 1:
+        newprice = price
+
+if price >= 10:
+    newprice = price * ((100 + perc) / 100)
+    if newprice > 100:
+        newprice = price
+newprice = str(newprice)
+for i in range(len(newprice)):
+    if newprice[i] == ".":
+        dc = newprice.split(".")
+        flag = False
+        break
+    if i == len(newprice):
+        flag = True
+    
+if len(dc[1]) == 2:
+    print("${}")
+if len(dc[1]) == 1:
+    print("${}0".format(newprice))
+if flag:
+    print("${}.00".format(newprice))
