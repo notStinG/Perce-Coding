@@ -1,0 +1,15 @@
+maximum = 0
+sweetlist = []
+for x in range(5):
+    sweetlist.append(10)
+for i in range(5):
+    passed = int(input())
+    sweetlist[i] -= passed
+    if i == 4:
+        sweetlist[0] += passed
+    else:
+        sweetlist[i + 1] += passed
+for a in range(5):
+    if sweetlist[a] > maximum:
+        maximum = sweetlist[a]
+print(maximum)
