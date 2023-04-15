@@ -1,0 +1,5 @@
+age = input()
+cake = input()
+print(cake * ((len(age) + 2)))
+print(cake + age + cake)
+print(cake * ((len(age) + 2)))
