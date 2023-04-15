@@ -1,0 +1,6 @@
+total = int(input())
+counter = 0
+while total != 0:
+    total += int(input())
+    counter += 1
+print(counter + 1)
