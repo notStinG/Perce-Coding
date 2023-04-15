@@ -1,0 +1,13 @@
+flag = True
+total = 0
+counter = 0
+while flag:
+    num = int(input())
+    if num < 0:
+        flag = False
+    else:
+        if num > 100:
+            counter += 1
+        total += num
+
+print(total + "\n" + counter)
