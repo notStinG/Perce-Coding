@@ -1,0 +1,9 @@
+money  = []
+total = 0
+for a in range(5):
+    money.append(input())
+remove = int(input())
+for i in range(len(money)):
+    if (i + 1) != remove:
+        total += int(money[i])
+print("${}".format(total))
