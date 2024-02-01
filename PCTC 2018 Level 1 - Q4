@@ -1,6 +1,6 @@
 yes = 0
 no = 0
-votes = input()
+votes = int(input())
 for i in range(votes):
     check = input()
     if check == "YES":
