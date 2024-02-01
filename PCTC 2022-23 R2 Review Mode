@@ -1,0 +1,51 @@
+player1 = 0
+player2 = 0
+roundchange = []
+wandflag = None
+
+def wincalc(p1, p2, wandflag):
+    if p1 == p2:
+        if p1 == "W":
+            if wandflag != None:
+                if wandflag == 1:
+                    return ["b", "d"]
+                else:
+                    return ["d", "b"]
+        return ["d", "d"]
+    elif p1 == "W":
+        return ["W", "L"]
+    elif p2 == "W":
+        return ["L", "W"]
+    else:
+        if p1 == "R" and p2 == "S":
+            return ["W", "L"]
+        if p1 == "S" and p2 =="P":
+            return ["W", "L"]
+        if p1 == "P" and p2 == "R":
+            return ["W", "L"]
+        if p2 == "R" and p1 == "S":
+            return ["L", "W"]
+        if p2 == "S" and p1 == "P":
+            return ["L", "W"]
+        if p2 == "P" and p1 == "R":
+            return ["L", "W"]
+    
+for i in range(6):
+    choice = input()
+    if choice != "WW":
+        if choice[0] == "W":
+            wandflag = 1
+        if choice[1] == "W":
+            wandflag = 2
+    roundchange = wincalc(choice[0], choice[1], wandflag)
+    if roundchange[0] == "b":
+        player1 = 0
+    if roundchange[0] == "W":
+        player1 += 1
+    if roundchange[1] == "b":
+        player2 = 0
+    if roundchange[1] == "W":
+        player2 += 1
+    
+    
+print("{}-{}".format(player1, player2))
