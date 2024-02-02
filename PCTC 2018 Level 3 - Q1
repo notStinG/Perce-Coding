@@ -1,0 +1,18 @@
+info = input().split(" ")
+players = int(info[0])
+steps = int(info[1])
+layers = int(info[2])
+playerlist = []
+
+for a in range(players):
+    playerlist.append(chr(65 + a))
+
+for i in range(layers):
+    move = steps % players
+    if steps == 0:
+        playerlist = playerlist[1:]
+    elif steps == len(playerlist):
+        playerlist = playerlist[:len(playerlist)]
+    else:
+        playerlist = playerlist[:move] + playerlist[move + 1:]
+print(playerlist[0])
