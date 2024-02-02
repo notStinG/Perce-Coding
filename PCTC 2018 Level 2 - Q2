@@ -1,0 +1,9 @@
+total = 0
+m = 0
+n = int(input())
+for a in range(n):
+    m += (a + 1)
+while m != 0:
+    total += m
+    m -= 1
+print(total)
