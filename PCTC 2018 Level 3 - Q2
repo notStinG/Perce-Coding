@@ -1,0 +1,10 @@
+flag = False
+n = int(input())
+num = 0
+while not flag:
+    zeroone = int(bin(num)[2:])
+    if zeroone % n == 0 and zeroone != 0:
+        print(zeroone)
+        break
+    else:
+        num += 1
