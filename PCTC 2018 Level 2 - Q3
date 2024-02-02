@@ -1,0 +1,16 @@
+buscount = 0
+speed = 0
+route = input()
+for a in range(len(route)):
+    if route[a] == "#":
+        buscount += 1
+    if route[a] == "+":
+        speed += 5
+    if route[a] == "-":
+        speed += 1
+busspeed = buscount * 4
+speed *= 3
+if speed >= busspeed:
+    print("\\")
+else:
+    print(buscount * "#")
