@@ -1,0 +1,9 @@
+import math as m
+i = 0
+flag = True
+while flag:
+    num = i**2
+    if str(num).endswith(input()):
+        print(num)
+        flag = False
+    i += 1
