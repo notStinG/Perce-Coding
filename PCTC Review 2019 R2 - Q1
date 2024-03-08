@@ -1,0 +1,10 @@
+import math as m
+
+a = int(input())
+b = int(input())
+r = int(input())
+
+if m.sqrt((r - a)**2) > m.sqrt((r - b)**2):
+    print(round(m.sqrt((r - b)**2)))
+elif m.sqrt((r - a)**2) <= m.sqrt((r - b)**2):
+    print(round(m.sqrt((r - a)**2)))
