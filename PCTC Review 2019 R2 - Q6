@@ -1,0 +1,19 @@
+curr = input().split(" ")
+if curr[0] == "DR":
+    curr = int("-" + curr[1])
+elif curr[0] == "CR":
+    curr = int(curr[1])
+
+trans = int(input())
+for i in range(trans):
+    t = input().split(" ")
+    if t[0] == "CR":
+        curr += int(t[1])
+    elif t[0] == "DR":
+        curr -= int(t[1])
+
+if curr < 0:
+    curr = str(curr)[1:]
+    print(f"DR {curr}")
+else:
+    print(f"CR {curr}")
