@@ -1,0 +1,6 @@
+fname = input()
+lname = input()
+name = "{}{} {}{}".format(fname[0].upper(), fname[1:].lower(), lname[0].upper(), lname[1:].lower())
+print("-" * (len(name) + 8))
+print(f"-=:|{name}|:=-")
+print("-" * (len(name) + 8))
