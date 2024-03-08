@@ -1,0 +1,63 @@
+board = [["-----P"], ["AAAAAP"], ["-D----"], ["-D----"], ["-D----"], ["-D-SSS"]]
+a_hp = 5
+p_hp = 2
+d_hp = 4
+s_hp = 3
+unh = 4
+hit = 0
+sunk = 0
+coord_hist = []
+for i in range(int(input())):
+    coord = input().split(" ")
+    if coord in coord_hist:
+        flag = False
+    else:
+        coord_hist.append(coord)
+        flag = True
+    if flag:
+        shot_x = board[int(coord[0]) - 1]
+        shot = shot_x[0][int(coord[1]) - 1]
+        if shot in "APDS":
+            if shot == "A":
+                if a_hp == 5:
+                    unh -= 1
+                    hit += 1
+                elif a_hp == 1:
+                    hit -= 1
+                    sunk += 1
+                elif a_hp <= 0:
+                    continue
+                a_hp -= 1
+            elif shot == "P":
+                if p_hp == 2:
+                    unh -= 1
+                    hit += 1
+                elif p_hp == 1:
+                    hit -= 1
+                    sunk += 1
+                elif p_hp <= 0:
+                    continue
+                p_hp -= 1
+            elif shot == "D":
+                if d_hp == 4:
+                    unh -= 1
+                    hit += 1
+                elif d_hp == 1:
+                    hit -= 1
+                    sunk += 1
+                elif d_hp <= 0:
+                    continue
+                d_hp -= 1
+            elif shot == "S":
+                if s_hp == 3:
+                    unh -= 1
+                    hit += 1
+                elif s_hp == 1:
+                    hit -= 1
+                    sunk += 1
+                elif s_hp <= 0:
+                    continue
+                s_hp -= 1
+print(f"UNHARMED:{unh}\n"
+      f"HIT BUT AFLOAT:{hit}\n"
+      f"HIT AND SUNK:{sunk}")
