@@ -1,0 +1,40 @@
+cph = 60
+total = 0
+coins = 0
+
+while True:
+    c = input()
+    if c == "-1":
+        break
+    else:
+        total += int(c)
+
+change = total % cph
+
+while change != 0:
+    if change >= 50:
+        coins += 1
+        change -= 50
+        continue
+    if change >= 20:
+        coins += 1
+        change -= 20
+        continue
+    if change >= 10:
+        coins += 1
+        change -= 10
+        continue
+    if change >= 5:
+        coins += 1
+        change -= 5
+        continue
+    if change >= 2:
+        coins += 1
+        change -= 2
+        continue
+    if change >= 1:
+        coins += 1
+        change -= 1
+        continue
+
+print(coins)
