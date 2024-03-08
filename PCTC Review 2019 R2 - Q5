@@ -1,9 +1,10 @@
 import math as m
 i = 0
 flag = True
+suffix = input()
 while flag:
     num = i**2
-    if str(num).endswith(input()):
+    if str(num).endswith(suffix):
         print(num)
         flag = False
     i += 1
