@@ -1,0 +1,4 @@
+import math as m
+dist = 384400 * 2 + 10921
+s = int(input()) / 1000 * 3600
+print(m.ceil(dist / s))
